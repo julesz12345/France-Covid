@@ -1,7 +1,8 @@
 ## Lab 2 - Preprocessing
 
 #Import data
-countries <- read.csv("C:\\Users\\Jules\\Desktop\\McGill\\Covid Analytics\\Lab 2\\countries-aggregated_csv - countries-aggregated_csv.csv")
+urlfile<-'https://raw.githubusercontent.com/julesz12345/France-Covid/main/countries-aggregated_csv.csv'
+countries<-read.csv(urlfile)
 
 #define the sum of active cases  (active = total - fatal - recovered) 
 countries$Active_Cases=countries$Total-countries$Deaths-countries$Recovered
