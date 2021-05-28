@@ -164,7 +164,7 @@ S_eq #.33
 I_eq #.06
 R_eq #.85
 
-"""In the long-run, we will reach an equilibrium where
+""" In the long-run, we will reach an equilibrium where
 0.06 of population is currently infected
 0.85 had the infection (and either recovered or died from it)
 0.33 never got infection (are susceptible)"""
@@ -184,7 +184,12 @@ out2=as.data.frame(out2)
 head(round(out2, 3))
 out$I2=out2$I
 
-ggplot(out, aes(x=time))+geom_line(aes(y=I), group = 1, col="red")+geom_line(aes(y=I2), group = 1,col="blue")+theme_bw()
+ggplot(out, aes(x=time))+
+  geom_line(aes(y = I, group=1,col="Without measures"), size = 1.5) +
+  geom_line(aes(y = I2, group=1,col="With measures"), size = 1.5) +
+  labs(x = "Time",
+       y = "Percentage",
+       color = "Legend")
 
 #red no measures
 #blue with measures
