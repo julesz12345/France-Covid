@@ -279,7 +279,11 @@ out = ode(y = start, times = times, func = sirmod,  parms = parms)
 out=as.data.frame(out)
 head(round(out, 3))
 
-ggplot(out, aes(x=time))+geom_line(aes(y=I),col="green")+theme_bw()
+ggplot(out, aes(x=time))+
+  geom_line(aes(y = I, color = "Infected"), size = 1.5) +
+  labs(x = "Time",
+       y = "Percentage",
+       color = "Population Split")
 
 immunity=200 #days
 times = seq(0, 1000, by = 1/10)
@@ -343,5 +347,9 @@ out = ode(y = start, times = times, func = sirmod,
            parms = parms)
 out=as.data.frame(out)
 head(round(out, 3))
-ggplot(out, aes(x=time))+geom_line(aes(y=I),col="green")+theme_bw()
 
+ggplot(out, aes(x=time))+
+  geom_line(aes(y = I), size = 1.5,col="green") +
+  labs(x = "Time",
+       y = "Percentage",
+       color = "Infected")
