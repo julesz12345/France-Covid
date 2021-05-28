@@ -21,8 +21,10 @@ countries_m =melt(countries , id=c("Date","Country"))
 #France
 library(ggplot2)
 france_m<-subset(countries_m, Country == "France")
-p1=ggplot(france_m, aes(x=Date, y=value, group=variable, color=variable),size = 1.5)
-p1+ geom_line()+theme_bw()
+p1=ggplot(france_m, aes(x=Date, y=value, group=variable, color=variable))
+p1+ geom_line(size=2)+labs(x = "Date",
+                            y = "Count",
+                            color = "Section Counts")
 
 #Data - Unmelted
 france<-subset(countries, Country == "France")
