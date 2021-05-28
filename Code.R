@@ -24,15 +24,6 @@ france_m<-subset(countries_m, Country == "France")
 p1=ggplot(france_m, aes(x=Date, y=value, group=variable, color=variable),size = 1.5)
 p1+ geom_line()+theme_bw()
 
-
-ggplot(out, aes(x=time))+geom_line(aes(y=I),col="green")+geom_line(aes(y=S),col="red")+geom_line(aes(y=R),col="blue")+
-  geom_line(aes(y = I, color = "Infected"), size = 1.5) +
-  geom_line(aes(y = S, color = "Susceptible"), size = 1.5) +
-  geom_line(aes(y = R, color = "Removed"), size = 1.5) +
-  labs(x = "Time",
-       y = "Percentage",
-       color = "Population Split")
-
 #Data - Unmelted
 france<-subset(countries, Country == "France")
 
