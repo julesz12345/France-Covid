@@ -1,5 +1,3 @@
-## Lab 2 - Preprocessing
-
 #Import data
 urlfile<-'https://raw.githubusercontent.com/julesz12345/France-Covid/main/countries-aggregated_csv.csv'
 countries<-read.csv(urlfile)
